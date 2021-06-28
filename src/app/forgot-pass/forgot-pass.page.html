@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container">
+    <div class="loginform">
+    <h2>Forgot Password:</h2>
+    <form action="">
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+        <button type="submit" class="btn btn-primary">Send</button><br>
+      </div>
+     
+      <div class="form-group form-check">
+        <br>
+        <a [routerLink]="['/login']" (click) = "login()">Login?</a>
+      </div>
+      
+    </form>
+  </div>
+  </div>
+</ion-content>

@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>My Account</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <!-- <ion-title size="large">Blank</ion-title> -->
+    </ion-toolbar>
+  </ion-header>
+
+  <!-- <div id="container"> -->
+    
+    <br>
+    <!-- <ion-item-divider color="light"> -->
+     
+    <br>
+    <ion-text color="tertiary">
+     
+    <ion-item>
+      <ion-label>First Name : </ion-label>
+      <ion-input type="text" placeholder="Enter First Name" [(ngModel)]="firstname" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Email ID : </ion-label>
+      <ion-input type="text" placeholder="your@email.com" [(ngModel)]="email" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Address : </ion-label>
+      <ion-textarea maxlength=30 placeholder="Enter address here..." [(ngModel)]="address" required></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-label>Mobile No : </ion-label>
+      <ion-input type="number" placeholder="Enter mobile no" [(ngModel)]="mob"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>DOB : </ion-label>
+      <ion-input type="date" ng-model="intro.dob" [(ngModel)]="dob" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>UserName : </ion-label>
+      <ion-input type="String" placeholder="username" [(ngModel)]="username" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Password : </ion-label>
+      <ion-input type="String" placeholder="password" [(ngModel)]="password" required></ion-input>
+    </ion-item>
+     
+    <ion-button color="success" shape="round" expand="block" (click) = "save(firstname,email,address,mob,dob,username,password)">Save</ion-button>
+     
+    </ion-text>
+     
+    <!-- </ion-item-divider> -->
+<!-- </div> -->
+</ion-content>

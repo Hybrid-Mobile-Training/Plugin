@@ -1,0 +1,44 @@
+    ion-toolbar{
+        color: #f13232;
+    }
+    
+    ion-content{
+    --background: url(https://thumbs.dreamstime.com/z/assorted-pharmaceutical-medicine-pills-tablets-capsules-pills-background-heap-assorted-various-medicine-tablets-pills-127080078.jpg);
+    --background-repeat: no-repeat;
+    --background-size: cover;  
+    }
+
+  #signInID {
+    background-color: #154fe4;
+    color: white;
+    padding: 3px 4px;
+    margin: 15px 0;
+    border: none;
+    cursor: pointer;
+    width: 50%;
+    height: 10%;
+    margin-left: 28%;
+    margin-top: 10%;
+    border-radius: 30px;
+  }
+  
+  #signUpID{
+    background-color: #154fe4;  
+    color: white;  
+    padding: 3px 4px; 
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 50%;
+    height: 10%;
+    margin-left: 28%;
+    border-radius: 30px;
+  }
+
+  #signInID:hover {
+    opacity: 0.8;
+  }
+
+  #signUpID:hover {
+    opacity: 0.8;
+  }

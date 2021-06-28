@@ -1,0 +1,116 @@
+// #container {
+//   text-align: center;
+
+//   position: absolute;
+//   left: 0;
+//   right: 0;
+//   top: 50%;
+//   transform: translateY(-50%);
+// }
+
+// #container strong {
+//   font-size: 20px;
+//   line-height: 26px;
+// }
+
+// #container p {
+//   font-size: 16px;
+//   line-height: 22px;
+
+//   color: #8c8c8c;
+
+//   margin: 0;
+// }
+
+// #container a {
+//   text-decoration: none;
+// }
+
+ion-toolbar{
+  color: #f13232;
+}
+
+h2{
+  text-align: center;
+}
+/*set border to the form*/
+      
+.container {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 3px solid #f1f1f1;
+  padding: 16px;
+  margin-top: 5%;
+}
+/*assign full width inputs*/
+
+ion-input[type=text],
+ion-input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+/*set a style for the buttons*/
+
+#buttonID {
+  background-color: #4CAF50;
+  color: white;
+  padding: 3px 4px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+#regButtonID{
+  background-color: #e2852d;  
+  color: white;  
+  padding: 3px 4px; 
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+/* set a hover effect for the button*/
+
+#buttonID:hover {
+  opacity: 0.8;
+}
+/*centre the display image inside the container*/
+
+.imgcontainer {
+  text-align: center;
+  //margin: 24px 0 12px 0;
+} 
+/*set image properties*/
+
+img.avatar {
+  width: 20%;
+  border-radius: 50%;
+}
+ion-fab-button {
+  height: 70px;
+  width: 70px;
+}
+
+.cart-icon {
+  font-size: 50px;
+}
+
+.cart-length {
+  color: var(--ion-color-primary);
+  position: absolute;
+  top: 23px;
+  left: 25px;
+  font-weight: 600;
+  font-size: 1em;
+  min-width: 25px;
+  z-index: 10;
+}
+

@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>product_details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+
+
+<ion-content>
+ 
+  <div id="prodid">
+    <ion-list *ngFor="let product of data">
+     <ion-menu-toggle> 
+        <ion-card (click) = "go()">
+          <img class="_396cs4 _3exPp9" height="150" width="150" src="{{product.avatar}}"> 
+       
+        <ion-card-header>
+          <ion-card-title>{{product.name}}</ion-card-title>
+          <ion-card-subtitle>{{product.subtitle}}</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content >{{product.description}}</ion-card-content>
+      </ion-card>
+    </ion-menu-toggle> 
+    </ion-list>
+  </div>
+</ion-content>

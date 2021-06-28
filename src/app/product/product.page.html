@@ -1,0 +1,135 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot= "start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title style="padding-bottom: 3%;">
+      <ion-label>Product</ion-label>
+      <ion-label>{{header}}</ion-label>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-menu side="start" menuId="first" contentId="content1">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Product Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+     <ion-content class="ion-padding">
+       <ion-list>
+         <img src="https://www.nicepng.com/png/full/359-3595837_property-management-services-login-user-avatar.png">
+         <ion-label style="padding-left: 20%; font-weight: bold;">Hello Kirti..!</ion-label>
+         <br> 
+         <!-- <ion-button (click) = "openCamera()">Camera</ion-button>
+         <ion-button (click) = "openGallery()">Gallary</ion-button>
+         <ion-button (click) = "scanBarcode()">Barcode Scan</ion-button>
+         <ion-button (click) = "onBatteryStatus()">Battery Status</ion-button> -->
+         <ion-item (click) = "home()">Home</ion-item>
+         <ion-item>My Cart</ion-item>
+         <ion-item (click) = "myAcc()">My account</ion-item>
+         <ion-item (click) = "aboutUs()">About Us</ion-item>
+         <ion-item (click) = "logout()">Log Out</ion-item>
+       </ion-list>
+     </ion-content>
+
+  </ion-menu>
+
+<ion-router-outlet id="content1"></ion-router-outlet> 
+
+	<!--fab button at top right that opens shopping cart-->
+	<!-- <ion-fab vertical="top" horizontal="end" slot="fixed">
+		<ion-fab-button (click)="openCart()" #cart>
+			<div class="cart-length">{{ cartItemCount | async }}</div>
+			<ion-icon name="cart" class="cart-icon"></ion-icon>
+		</ion-fab-button>
+	</ion-fab>  -->
+
+	<!--list of products in 2 columns: product name and price, add icon-->
+ <!-- <ion-list>
+		<ion-card *ngFor="let p of products">
+			<ion-card-header>
+				<ion-card-title>{{ p.category }}</ion-card-title>
+        <ion-card-title>{{ p.description }}</ion-card-title>
+        <ion-card-title>{{ p.price }}</ion-card-title>
+        <ion-card-title>{{ p.stock }}</ion-card-title>
+        <ion-card-title>{{ p.title }}</ion-card-title>
+			</ion-card-header> -->
+			<!-- <ion-card-content>
+				<ion-row class="ion-align-items-center">
+					<ion-col size="8">
+						<ion-label color="secondary">
+							<b>{{ p.price | currency:'EUR' }}</b>
+						</ion-label>
+					</ion-col>
+					<ion-col size="4" class="ion-text-right">
+						<ion-button fill="clear" (click)="addToCart(p)">
+							<ion-icon name="add"></ion-icon>
+						</ion-button>
+					</ion-col>
+				</ion-row>
+			</ion-card-content> -->
+		<!-- </ion-card>
+	</ion-list>  -->
+<!-- <div id="prodid">
+<ion-list *ngFor="let product of products">
+ <ion-menu-toggle> 
+    <ion-card (click) = "prod_details()">
+      <img class="_396cs4 _3exPp9" height="150" width="150" src="{{product.avatar}}"> 
+   
+    <ion-card-header>
+      <ion-card-title>{{product.name}}</ion-card-title>
+    </ion-card-header>
+  </ion-card>
+</ion-menu-toggle> 
+</ion-list>
+</div> -->
+
+
+<ion-content>
+ 
+  <ion-list>
+    <ion-item *ngFor="let p of products | async" (click)="p.expanded = !p.expanded">
+      <ion-thumbnail slot="start">
+        <ion-img [src]="p.image"></ion-img>
+      </ion-thumbnail>
+      <ion-label class="ion-text-wrap">
+        {{ p.title }}<br>
+        <b>{{ p.price | currency:'USD' }}</b>
+        <p>{{ p.stock }} left</p>
+        <div [hidden]="!p.expanded">
+          {{ p.description }}
+        </div>
+      </ion-label>
+      <ion-row slot="end" class="ion-no-padding ion-align-items-center">
+        <ion-col size="5">
+          <ion-button (click)="addToCart($event, p)" fill="clear">
+            <ion-icon name="add" slot="icon-only"></ion-icon>
+          </ion-button>
+        </ion-col>
+ 
+        <ion-col size="2">
+          {{ cart[p.id] || 0 }}
+        </ion-col>
+ 
+        <ion-col size="5">
+          <ion-button (click)="removeFromCart($event, p)" fill="clear" [disabled]="!cart[p.id] || cart[p.id] == 0">
+            <ion-icon name="remove" slot="icon-only"></ion-icon>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+ 
+    </ion-item>
+  </ion-list>
+ 
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="openCart()" color="secondary" #myfab>
+      <ion-icon name="cart"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+ 
+</ion-content>
+
+
+
