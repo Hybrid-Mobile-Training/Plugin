@@ -1,33 +1,6 @@
-// #container {
-//   text-align: center;
-
-//   position: absolute;
-//   left: 0;
-//   right: 0;
-//   top: 50%;
-//   transform: translateY(-50%);
-// }
-
-// #container strong {
-//   font-size: 20px;
-//   line-height: 26px;
-// }
-
-// #container p {
-//   font-size: 16px;
-//   line-height: 22px;
-
-//   color: #8c8c8c;
-
-//   margin: 0;
-// }
-
-// #container a {
-//   text-decoration: none;
-// }
-
 ion-toolbar{
-  color: #f13232;
+  color: #1657ea;
+  text-align: center;
 }
 
 h2{
@@ -69,13 +42,13 @@ ion-input[type=password] {
 }
 
 #regButtonID{
-  background-color: #e2852d;  
+  background-color: #6cc185;  
   color: white;  
   padding: 3px 4px; 
   margin: 8px 0;
   border: none;
   cursor: pointer;
-  width: 100%;
+  width: 90%;
 }
 /* set a hover effect for the button*/
 
@@ -91,8 +64,9 @@ ion-input[type=password] {
 /*set image properties*/
 
 img.avatar {
-  width: 20%;
+  width: 25%;
   border-radius: 50%;
+  margin-top: 5%;
 }
 ion-fab-button {
   height: 70px;

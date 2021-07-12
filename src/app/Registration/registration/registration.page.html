@@ -1,5 +1,10 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button color="black" class="backbtn" routerLink="/home" routerDirection="back">
+        <img src='../../assets/back-dark.svg' />
+      </ion-button>
+    </ion-buttons>
     <ion-title>New Registration</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -18,8 +23,8 @@
      
     <br>
     <ion-text color="tertiary">
-     
-    <ion-item>
+      <app-auth-form #signupForm (formSubmitted)=signupUser($event) [actionButtonText]="'Create Account'" ></app-auth-form>
+    <!-- <ion-item>
       <ion-label>First Name : </ion-label>
       <ion-input type="text" placeholder="Enter First Name" [(ngModel)]="firstname" required></ion-input>
     </ion-item>
@@ -48,10 +53,9 @@
       <ion-input type="String" placeholder="password" [(ngModel)]="password" required></ion-input>
     </ion-item>
      
-    <ion-button color="success" shape="round" expand="block" (click) = "submit(firstname,email,address,mob,dob,username,password)">Sign Up</ion-button>
-     
+    <ion-button id="submitID"color="success" shape="round" expand="block" (click) = "submit(firstname,email,address,mob,dob,username,password)">Sign Up</ion-button>
+  -->
+      
     </ion-text>
-     
-    <!-- </ion-item-divider> -->
-<!-- </div> -->
+ 
 </ion-content>

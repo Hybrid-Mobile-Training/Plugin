@@ -1,26 +1,53 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title></ion-title>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button color="primary" class="backbtn" routerLink="/product" routerDirection="back">
+        <img src='../../assets/back-dark.svg' />
+      </ion-button>
+    </ion-buttons>
+    <ion-title>About Us</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-item class="box">
-    <ion-label position="floating" color="primary">About Us</ion-label><br><br>
-    <ion-input>Ratnadeep Pharmacy is a part of Ratnadeep Hospitals - Asia's largest healthcare group. 
-      It is India's first and largest branded pharmacy network, with over 3000 plus outlets in key Locations.
-
-      Accredited with - International Quality Certification, Ratnadeep Pharmacy offers genuine medicines round-the-clock, 
-      through their 24-hour Pharmacies. Ratnadeep Pharmacy also provides Customer Care any time of the day.
-      
-      Quality is the cornerstone of our existence. We have gained experience in pharmacy operations management over the
-      last 2 decades and are committed to delivering best service in the industry.
-      
-      Ratnadeep Pharmacy is well stocked with medicines OTC and FMCG products, manned by competent staff with computerized system
-      
-      Ratnadeeppharmacy.in has more than 5000 products in various categories like Vitamins and supplements, Baby care, 
-      Personal care, Health foods and OTC. In addition to this we have more than 400 Ratnadeep Brand Products in
-      the following categories like vitamins and supplements, health food,
-      Oral care, skin care, personal care, baby care, OTC etc</ion-input>
-  </ion-item>
+  <div class="column">
+    <div class="about-section">
+        <b style="text-align:center; color: #861111; font-size: 28px;">Ratnadeep Pharmacy</b>
+        <p>Ratnadeep Pharmacy is well stocked with medicines OTC and FMCG products, manned by competent staff with computerized system.
+          'Ratnadeeppharmacy.in' has more than 5000 products in vari'ous categories like Vitamins and supplements, Baby care, 
+          Personal care, Health foods and OTC. In addition to this we have more than 400 Ratnadeep Brand Products in
+          the following categories like vitamins and supplements, health food,
+          Oral care, skin care, personal care, baby care, OTC etc</p>
+      </div>
+    </div>
+  
+  
+  <h2 style="text-align:center">Our Team</h2>
+  <div class="row">
+    <div class="column">
+      <div class="card">
+        <img src="../../assets/kirti.jpeg" alt="Jane" style="width:60%; padding-left: 20%;">
+        <div class="container">
+          <h2>Amruta Mahadik</h2>
+          <p class="title">CEO & Founder</p>
+          <p>amruta-vishnu.mahadik@capgemini.com</p>
+          <p><button class="buttonClass" style="background-color: #6cc185;">Contact</button></p>
+        </div>
+      </div>
+    </div>
+  
+    <div class="column">
+      <div class="card">
+        <img src="../../assets/amruta.jpeg" alt="Mike" style="width:60%; padding-left: 20%;">
+        <div class="container">
+          <h2>Kirti Kamble</h2>
+          <p class="title">CEO & Founder</p>
+          <p>kirti-sanjay.kamble@capgemini.com</p>
+          <p><button class="buttonClass" style="background-color: #6cc185;">Contact</button></p>
+        </div>
+      </div>
+    </div>
+  </div>
 </ion-content>
+
+

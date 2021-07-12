@@ -1,13 +1,22 @@
-.avatar{
-    width: 10%;
-    margin :auto;
-}
-
 #userProfButtonID{
     margin-left: 23%;
 }
 
-img {
-    max-width: 30%;
-    border: 0;
+.user-profile-img{
+    background: url('../images/userProfile.png');
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: multiply;
+    color: transparent;
+    transition: all .3s ease;
+
+    &:hover {
+        background-color: rgba(0,0,0,.5);
+        z-index: 10000;
+        color: rgba(250,250,250,1);
+        transition: all .3s ease;
+        }
 }

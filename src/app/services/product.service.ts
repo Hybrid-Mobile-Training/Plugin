@@ -16,6 +16,8 @@ export class ProductService {
   cart = new BehaviorSubject({});
   cartKey = null;
   productsCollection: AngularFirestoreCollection;
+  //ordersCollection: AngularFirestoreCollection;
+  //orderId: string;
  
   constructor(private afs: AngularFirestore) {
     this.loadCart();
@@ -25,6 +27,14 @@ export class ProductService {
   getProducts() {
     return this.productsCollection.valueChanges({ idField: 'id' });
   }
+
+  // getOrders() {
+  //   return firebase.firestore().collection('orders').doc(this.orderId).get();
+  // }
+  getOrders(){
+    this.productsCollection = this.afs.collection('orders'); 
+    console.log(this.productsCollection.valueChanges({ idField: 'id' }));
+}
  
   async loadCart() {
     const result = await Storage.get({ key: CART_STORAGE_KEY });

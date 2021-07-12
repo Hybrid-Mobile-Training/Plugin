@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar >
     <ion-title>
-      Login Page
+      LOGIN 
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -15,38 +15,26 @@
 
   <!-- <body> -->
   
-    <h2>Login</h2>
+    <!-- <h2>Login</h2> -->
     <!--Step 1 : Adding HTML-->
         <div class="imgcontainer">
             <img src="https://www.nicepng.com/png/full/359-3595837_property-management-services-login-user-avatar.png" alt="Avatar" class="avatar">
         </div>
 
         <div class="container">   
-          <ion-label>UserName</ion-label>
+          <app-auth-form style="padding: 12px;margin-bottom: 0px;" #loginForm  (formSubmitted)="loginUser($event)" [actionButtonText]="'Login'">
+            
+          </app-auth-form>
+          <ion-button style="width: 93%;" (click) = "register()">New User? Register here</ion-button> <br><br>
+          <a [routerLink]="['/forgot-password']" style="padding-left: 3%;"(click) = "forgotPass()">Forgot Password?</a>
+          <!-- <ion-label>UserName</ion-label>
           <ion-input type= "text" placeholder="Enter UserName"[(ngModel)]="username"></ion-input><br>
           
           <ion-label>Password</ion-label>
           <ion-input type= "password" placeholder="Enter Password" [(ngModel)]="password"></ion-input><br>
-  
-          <ion-button id="buttonID" color="success" (click) = "submit(username, password)">Log In</ion-button> 
-          <ion-button id="regButtonID" color="red" (click) = "register()">New User? Register here</ion-button> 
-          <a [routerLink]="['/forgot-password']" (click) = "forgotPass()">Forgot Password?</a>
-        </div>
- 
-<!-- </body> -->
-  <!-- <div id="container">
-    
-    <strong>{{header}}</strong><br><br>
+   -->
+   
+  </div>
 
-    <ion-label>UserName</ion-label>
-    <ion-input placeholder="Enter UserName"[(ngModel)]="username"></ion-input><br>
-    
-    <ion-label>Password</ion-label>
-    <ion-input type= "password" placeholder="Enter Password" [(ngModel)]="password"></ion-input><br>
-
-    <ion-button color="success" (click) = "submit(username, password)">submit</ion-button> 
-     
-    
-</div> -->
 </ion-content>
 

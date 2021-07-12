@@ -1,7 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { ProductServiceService } from '../providers/product-service.service';
-import { SQLite, SQLiteObject } from '@ionic-native/sqlite/ngx';
+import { UserCredential } from 'src/app/models/user';
+import { AuthService } from 'src/app/services/auth.service';
+import { AuthFormComponent } from 'src/app/components/auth-form/auth-form.component';
+import firebase from 'firebase/app';
 
 
 @Component({
@@ -13,15 +16,11 @@ export class HomePage {
   public header:any;
   public username:String;
   public password:any;
-  public database: SQLiteObject;
 
-  constructor(private router : Router,private sqlite: SQLite) {
-//     this.sqlite.create({name: "myDatabase.db", location: "default"}).then((db : SQLiteObject) => {
-//       this.database = db;
-//       this.createTables();
-//   }, (error) => {
-//       console.log("ERROR: ", error);
-// }); 
+  @ViewChild(AuthFormComponent) loginForm: AuthFormComponent;
+
+  constructor(private router : Router,private authService: AuthService) {
+
 
   }
 
@@ -29,9 +28,27 @@ export class HomePage {
 		
 	}
 
-  submit(user, pass){
-    this.router.navigateByUrl('product'); 
-    console.log("Hello user");
+  // submit(user, pass){
+  //   this.router.navigateByUrl('product'); 
+  //   console.log("Hello user");
+  // }
+
+  async loginUser(credentials: UserCredential): Promise<void> {
+    console.log("hii");
+    try {
+      const userCredential: firebase.auth.UserCredential = await this.authService.login(
+        credentials.email,
+        credentials.password
+      );
+      console.log("hii1");
+      this.authService.userId = userCredential.user.uid;
+      await this.loginForm.hideLoading();
+      console.log("hii2");
+      this.router.navigateByUrl('product');
+    } catch (error) {
+      await this.loginForm.hideLoading();
+      this.loginForm.handleError(error);
+    }
   }
 
   register(){
@@ -42,14 +59,6 @@ export class HomePage {
     this.router.navigateByUrl('forgot-pass'); 
   }
 
-  // async createTables(){
-  //   try {
-  //       await this.database.executeSql(`CREATE TABLE IF NOT EXISTS Family (id INTEGER PRIMARY KEY,name TEXT NOT NULL)`,[]);
-  //       console.log("Table created successfully !");
-  //   }catch(e){
-  //       console.log("Error !", e);
-  //   }
-  // }
 
 
 }
